@@ -17,7 +17,7 @@ G">
 操作系统使用windows。思路是在github上面注册账号，然后利用hexo作为框架生成博客并上传到github上。利用markdownpad 2作为文本编辑器。
 安装Node.js和Git在官网上下载node.js：https://nodejs.org/dist/v4.6.0/node-v4.6.0-x64.msi
 G">
-<meta property="og:updated_time" content="2016-10-06T13:05:27.834Z">
+<meta property="og:updated_time" content="2016-10-06T15:08:42.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建自己的博客">
 <meta name="twitter:description" content="终于把自己的博客弄好了，接下来讲一下我是怎么一步一步把自己的博客给弄好的！
@@ -124,13 +124,11 @@ G">
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/Home">博客首页</a></li>
-                        
-                            <li><a href="/works">作品展示</a></li>
+                            <li><a href="/">博客首页</a></li>
                         
                             <li><a href="/about">留言打卡</a></li>
                         
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                            <li><a href="/tags">静心阅读</a></li>
                         
                         </ul>
                     </nav>
@@ -207,13 +205,11 @@ G">
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/Home">博客首页</a></li>
-                
-                    <li><a href="/works">作品展示</a></li>
+                    <li><a href="/">博客首页</a></li>
                 
                     <li><a href="/about">留言打卡</a></li>
                 
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                    <li><a href="/tags">静心阅读</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -282,15 +278,12 @@ G">
 <p>操作系统使用windows。<br>思路是在github上面注册账号，然后利用hexo作为框架生成博客并上传到github上。<br>利用markdownpad 2作为文本编辑器。</p>
 <h2 id="安装Node-js和Git"><a href="#安装Node-js和Git" class="headerlink" title="安装Node.js和Git"></a>安装Node.js和Git</h2><p>在官网上下载node.js：<a href="https://nodejs.org/dist/v4.6.0/node-v4.6.0-x64.msi" target="_blank" rel="external">https://nodejs.org/dist/v4.6.0/node-v4.6.0-x64.msi</a></p>
 <p>Git使用githubdesktop自动安装，并且还可以顺便安上gitshell：<a href="https://github-windows.s3.amazonaws.com/GitHubSetup.exe" target="_blank" rel="external">https://github-windows.s3.amazonaws.com/GitHubSetup.exe</a></p>
-<p>安装github的桌面板，登录帐号，在C盘的用户里面的自己的用户里面有一个.ssh的文件夹，把里面的.pub的文件打开，复制里面的信息，到github官网绑定ssh的界面里。</p>
+<p>安装github的桌面版，登录帐号，在C盘的用户里面的自己的用户里面有一个.ssh的文件夹，把里面的.pub的文件打开，复制里面的信息，到github官网绑定ssh的界面里。</p>
 <a id="more"></a>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>在Gitshell执行：</p>
-<pre><code>npm install hexo-cli -g
-hexo init Orange108
-cd Orange108
-npm install
-</code></pre><h3 id="安装git部署插件"><a href="#安装git部署插件" class="headerlink" title="安装git部署插件"></a>安装git部署插件</h3><pre><code>npm install hexo-deployer-git --save
-</code></pre><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置文件是博客根目录下的<code>_config.yml</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">hexo init Orange108</div><div class="line"><span class="built_in">cd</span> Orange108</div><div class="line">npm install</div></pre></td></tr></table></figure>
+<h3 id="安装git部署插件"><a href="#安装git部署插件" class="headerlink" title="安装git部署插件"></a>安装git部署插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置文件是博客根目录下的<code>_config.yml</code>。</p>
 <p>在其中输入网站基本信息，并配置要上传到的github的公开库。</p>
 <p>指定使用的主题。</p>
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>我现在网上找了一些他们做的比较有美感的博客模板，挑了一个自己比较喜欢的，并修改主题目录下面<code>_config.yml</code>的内容。</p>
@@ -310,7 +303,7 @@ npm install
         <p><span>本文标题:</span><a href="/2016/10/06/diyipian/">如何搭建自己的博客</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tianfeng 的个人博客">Tianfeng</a></p>
         <p><span>发布时间:</span>2016年10月06日 - 20时57分</p>
-        <p><span>最后更新:</span>2016年10月06日 - 21时05分</p>
+        <p><span>最后更新:</span>2016年10月06日 - 23时08分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/06/diyipian/" title="如何搭建自己的博客">https://orange108.github.io/2016/10/06/diyipian/</a>
             <span class="copy-path" data-clipboard-text="原文: https://orange108.github.io/2016/10/06/diyipian/　　作者: Tianfeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -323,16 +316,6 @@ npm install
     </div>
 
 
-
-<nav id="article-nav">
-  
-  
-    <a href="/2016/10/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
 
   
 </article>
@@ -414,12 +397,10 @@ npm install
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/10/06/hello-world/" title="下一篇: Hello World">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/diyipian/">如何搭建自己的博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/diyipian/">如何搭建自己的博客</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
