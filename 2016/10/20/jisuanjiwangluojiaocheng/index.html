@@ -25,7 +25,7 @@
 （2）软件方面：各类协议
   选路、传输控制、媒体接入
 基本结构：网状型、星型、总线型、环形、树形、复合型。">
-<meta property="og:updated_time" content="2016-10-24T01:29:12.902Z">
+<meta property="og:updated_time" content="2016-10-26T13:13:01.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络教程复习提纲">
 <meta name="twitter:description" content="第一章 概述
@@ -316,41 +316,97 @@
 <p>   定义：通信网络中通信双方为了实现有效通信而共同遵守的规则的集合。</p>
 <p>   基本要素：语义、语法、时序。</p>
 <p>7.为什么要分层？层间服务模型的理解。</p>
+<p>   理解：（1）下层对上层是“透明的”。即某一层实体只能看到本层服务，而看不到下层的协议到底是如何服务的。</p>
+<p>   （2）协议是“水平”的。即协议是控制对等实体之间通信的规则。</p>
+<p>   （3）服务是“垂直”的。即服务是由下层向上层通过层间接口提供的。</p>
 <p>8.OSi 7(5)层服务模型的描述以及各层功能。</p>
-<p>   （7）应用层</p>
-<p>   （6）表示层</p>
-<p>   （5）会话层</p>
-<p>   （4）运输层</p>
-<p>   （3）网络层</p>
-<p>   （2）数据链路层</p>
-<p>   （1）物理层</p>
+<p>   （7）应用层：应用层是原理体系结构中的最高层。应用层确定进程之间通信的性质以满足用户的需要（这反映在客户所产生的服务请求）。</p>
+<p>   （6）表示层：</p>
+<p>   （5）会话层：</p>
+<p>   （4）运输层：运输层的任务就是负责主机中两个进程之间的通信，其数据传输的单位是报文段。</p>
+<p>   （3）网络层：网络层负责为分组交换网上的不同主机提供通信，在网络层数据的传送单位是分组或包。</p>
+<p>   （2）数据链路层：数据链路层的任务是在两个相邻结点间的线路上无差错地传送以帧为单位的数据。</p>
+<p>   （1）物理层：物理层的任务就是透明的传送比特流。</p>
 <p>9.TCP/Ip体系结构及其与OSI模型对照关系。</p>
 <h1 id="第二章-物理层"><a href="#第二章-物理层" class="headerlink" title="第二章 物理层"></a>第二章 物理层</h1><p>10.单工、半双工、全双工的理解。</p>
+<p>   单工：只有一个方向的通信而没有反方向的交互。</p>
+<p>   半双工：通信的双方都可以发送信息，但不能双方同时发送。</p>
+<p>   全双工：通信的双方可以同时发送和接受信息。</p>
 <p>11.Nyquist准则，香农公式的含义理解及作用范围。</p>
+<p>   Nyquist准则：理想低通信道最高码元传输速率=w Band。（w：理想低通信道的带宽。即每赫带宽的带通信道的最高码元传输速率为每秒一个码元。）</p>
+<p>   香农公式：C=wlog（1+S/N）（C：信道的极限信息速率。w：信道带宽。S：信号的平均功率。N：高斯噪声功率）（此处有一个证明）</p>
+<p>   码元传输速率受Nyquist准则限制。</p>
+<p>   信息传输速率受香农公式限制</p>
 <p>12.常用传输媒体。</p>
+<p>   导向传输媒体：双绞线，同轴电缆，光缆。</p>
+<p>   非导向传输媒体：电离层反射，直线传播。</p>
 <p>13.信道复用方式。</p>
+<p>   频分复用FDMA、时分复用TDMA、波分复用WDMA、码分复用。</p>
 <p>14.时分/频分/码分复用的基本原理。</p>
+<p>   任何一个码片向量和该码片向量自己的规格话内积是1。</p>
+<p>   任何一个码片向量和该码片的反码向量的规格话内积是1。</p>
 <h1 id="第三章-数据链路层"><a href="#第三章-数据链路层" class="headerlink" title="第三章 数据链路层"></a>第三章 数据链路层</h1><p>15.数据链路层的基本任务及传输单元。</p>
+<p>   基本任务：数据链路层的任务是在两个相邻结点间的线路上无差错地传送以帧为单位的数据。</p>
 <p>16.如何解决帧定界透明传输任务。</p>
+<p>   答：字节填充法</p>
 <p>17.差错检测方法。</p>
-<p>18.可靠传输方法。</p>
-<p>19.理解ALOHA（S-ALOHA）协议的基本思想、工作原理分析基性能。</p>
+<p>   （1）奇偶校验法（单比特错误）</p>
+<p>   （2）循环冗余校验</p>
+<p>   （3）校验和</p>
+<p>18.可靠传输方法。(需要看到图知道哪种)</p>
+<p>   （1）停等式ARQ</p>
+<p>   （2）连续式ARQ</p>
+<p>   （3）选择性重传ARQ</p>
+<p>19.理解ALOHA（S-ALOHA）协议的基本思想、工作原理分析其性能。</p>
+<p>   ALOHA基本思想：若一个空闲节点上有数据帧产生，立刻发送该帧；一旦碰撞，则随机退避一段时间再重传该帧。</p>
+<p>   ALOHA工作原理：理解就好啦。</p>
+<p>   ALOHA性能：性能曲线啦，难不成还让我画= =</p>
+<p>   S-ALOHA基本思想：将时间轴分成若干长度为T的时隙，各节点只能在时隙开始时刻发送帧。</p>
+<p>   S-ALOHA工作原理：理解，理解。</p>
+<p>   S-ALOHA性能：同上。</p>
 <p>20.MAC地址。</p>
+<p>   MAC地址又称为物理地址，它是网络站点的全球唯一的标识符，与其物理位置无关。</p>
 <p>21.隐藏站，暴露站的问题。</p>
+<p>   这个太难，我选择沉默。</p>
 <p>22.信道预约（KTS、CTS）</p>
-<p>23.路由器的作用和组成。</p>
+<p>   简单点说用来客服上面的问题= =</p>
+<h1 id="第四章-网络互连"><a href="#第四章-网络互连" class="headerlink" title="第四章 网络互连"></a>第四章 网络互连</h1><p>23.路由器的作用和组成。</p>
+<p>   作用：两个局域网数据报的间接交付，包括路由选择和分组交换。</p>
+<p>   组成：输入输出端、路由选择处理机。</p>
 <p>24网络拥塞的原因和拥塞控制的基本思路。</p>
+<p>   原因：对资源的需求大于网络处理能力</p>
+<p>   1、开环拥塞控制：通过良好设计避免拥塞的发生。</p>
+<p>   2、闭环拥塞控制：通过反馈过的当前状况做恰当的调整。</p>
 <p>25.网络层拥塞控制方法。</p>
+<p>   拥塞检测：警告比特、抑制包、卸载</p>
+<p>   拥塞避免：随机早期丢包、通信量整形</p>
 <p>26.IP协议及配套。</p>
+<p>   见ppt地40页</p>
 <p>27.Ip地址的几种形式。</p>
+<p>   二级ip地址和三级ip地址</p>
 <p>28.Ip地址、子网掩码和网络地址的关系。</p>
+<p>   前两个相与就是第三个</p>
 <p>29.最短路径的算法。</p>
+<p>   看ppt</p>
 <h1 id="第五章-传输层"><a href="#第五章-传输层" class="headerlink" title="第五章 传输层"></a>第五章 传输层</h1><p>30.传输层主要功能。</p>
+<p>   传输层为应用进程之间提供端到端的逻辑通信。</p>
+<p>   传输层对收到的报文进行差错检测。</p>
+<p>   传输层需要有两种不同的协议，即面向连接的TCP和无连接的UDP。</p>
 <p>31.UDP特点。</p>
+<p>  无连接的，使用尽最大努力交付，没有拥塞控制，面向报文的，支持一对一、一对多、多对一和多对多的交互通信，首部开销只有八个字节，比TCP</p>
+<p>  的首部要短</p>
+<p>（不可靠交付，伪首部不发送）记住这两点即可。</p>
 <p>32.TCP可靠性原理。</p>
+<p>  确认机制、重传机制</p>
 <p>33.滑动窗口技术。</p>
+<p>  见ppt，会用自己的话描述。</p>
 <p>34.TCP的拥塞控制算法。</p>
+<p>   1、控制拥塞速率</p>
+<p>   2、如何知道发生拥塞</p>
+<p>   3、按何种算法改变发送速率</p>
 <p>35.TCP连接管理。</p>
+<p>  三次握手建立连接</p>
+<p>  四次握手释放连接  </p>
 
       
     </div>
@@ -362,7 +418,7 @@
         <p><span>本文标题:</span><a href="/2016/10/20/jisuanjiwangluojiaocheng/">计算机网络教程复习提纲</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tianfeng 的个人博客">Tianfeng</a></p>
         <p><span>发布时间:</span>2016年10月20日 - 08时46分</p>
-        <p><span>最后更新:</span>2016年10月24日 - 09时29分</p>
+        <p><span>最后更新:</span>2016年10月26日 - 21时13分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/20/jisuanjiwangluojiaocheng/" title="计算机网络教程复习提纲">https://orange108.github.io/2016/10/20/jisuanjiwangluojiaocheng/</a>
             <span class="copy-path" data-clipboard-text="原文: https://orange108.github.io/2016/10/20/jisuanjiwangluojiaocheng/　　作者: Tianfeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -391,7 +447,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-概述"><span class="toc-number">1.</span> <span class="toc-text">第一章 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二章-物理层"><span class="toc-number">2.</span> <span class="toc-text">第二章 物理层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三章-数据链路层"><span class="toc-number">3.</span> <span class="toc-text">第三章 数据链路层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第五章-传输层"><span class="toc-number">4.</span> <span class="toc-text">第五章 传输层</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-概述"><span class="toc-number">1.</span> <span class="toc-text">第一章 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二章-物理层"><span class="toc-number">2.</span> <span class="toc-text">第二章 物理层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三章-数据链路层"><span class="toc-number">3.</span> <span class="toc-text">第三章 数据链路层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第四章-网络互连"><span class="toc-number">4.</span> <span class="toc-text">第四章 网络互连</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第五章-传输层"><span class="toc-number">5.</span> <span class="toc-text">第五章 传输层</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
